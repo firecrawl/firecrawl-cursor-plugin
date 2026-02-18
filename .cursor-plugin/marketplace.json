@@ -1,24 +1,18 @@
 {
-  "name": "cursor-plugin-starters",
+  "name": "firecrawl",
   "owner": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Firecrawl",
+    "email": "hello@firecrawl.dev"
   },
   "metadata": {
-    "description": "Starter marketplace template for Cursor plugins",
-    "version": "0.1.0",
-    "pluginRoot": "plugins"
+    "description": "Firecrawl plugin for Cursor",
+    "version": "0.1.0"
   },
   "plugins": [
     {
-      "name": "starter-simple",
-      "source": "./plugins/starter-simple",
-      "description": "Minimal plugin with rules and skills only"
-    },
-    {
-      "name": "starter-advanced",
-      "source": "./plugins/starter-advanced",
-      "description": "Full-featured plugin with rules, skills, agents, commands, hooks, and MCP"
+      "name": "firecrawl",
+      "source": ".",
+      "description": "Web scraping, crawling, and search for AI agents via the Firecrawl CLI"
     }
   ]
 }

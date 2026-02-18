@@ -1,34 +1,24 @@
-# Cursor plugin template
+# Firecrawl Cursor Plugin
 
-Build and publish Cursor Marketplace plugins from a single repo.
+Cursor plugin that gives AI agents full web access through the [Firecrawl CLI](https://github.com/mendableai/firecrawl-cli): search, scrape, map, crawl, browser automation, and AI-powered extraction.
 
-Two starter plugins are included:
+## What's included
 
-- **starter-simple**: rules and skills only
-- **starter-advanced**: rules, skills, agents, commands, hooks, MCP, and scripts
+- **`skills/firecrawl/SKILL.md`** - Complete CLI reference covering search, scrape, map, crawl, browser, and agent commands with workflow patterns and examples
+- **`rules/install.mdc`** - Installation and authentication handling
 
-## Getting started
+## Setup
 
-[Use this template](https://github.com/cursor/plugin-template/generate) to create a new repository, then customize:
+```bash
+npm install -g firecrawl-cli
+firecrawl login --browser
+```
 
-1. `.cursor-plugin/marketplace.json`: set marketplace `name`, `owner`, and `metadata`.
-2. `plugins/*/.cursor-plugin/plugin.json`: set `name` (lowercase kebab-case), `displayName`, `author`, `description`, `keywords`, `license`, and `version`.
-3. Replace placeholder rules, skills, agents, commands, hooks, scripts, and logos.
+## Capabilities
 
-To add more plugins, see `docs/add-a-plugin.md`.
-
-## Single plugin vs multi-plugin
-
-This template defaults to **multi-plugin** (multiple plugins in one repo).
-
-For a **single plugin**, move your plugin folder contents to the repository root, keep one `.cursor-plugin/plugin.json`, and remove `.cursor-plugin/marketplace.json`.
-
-## Submission checklist
-
-- Each plugin has a valid `.cursor-plugin/plugin.json`.
-- Plugin names are unique, lowercase, and kebab-case.
-- `.cursor-plugin/marketplace.json` entries map to real plugin folders.
-- All frontmatter metadata is present in rule, skill, agent, and command files.
-- Logos are committed and referenced with relative paths.
-- `node scripts/validate-template.mjs` passes.
-- Repository link is ready for submission to the Cursor team (Slack or `kniparko@anysphere.com`).
+- **Search** - Web, image, and news search with optional full-page scraping of results
+- **Scrape** - Single page content extraction to clean markdown, with JS rendering support
+- **Map** - Discover all URLs on a site, with search filtering
+- **Crawl** - Bulk content extraction from entire site sections
+- **Browser** - Remote Chromium sessions for interactive pages (pagination, forms, modals)
+- **Agent** - AI-powered autonomous web research and structured data extraction

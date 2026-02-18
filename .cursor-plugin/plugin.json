@@ -1,0 +1,13 @@
+{
+  "name": "firecrawl",
+  "displayName": "Firecrawl",
+  "version": "0.1.0",
+  "description": "Web scraping, crawling, and search for AI agents. Gives Cursor full access to web content through the Firecrawl CLI.",
+  "author": {
+    "name": "Firecrawl",
+    "email": "hello@firecrawl.dev"
+  },
+  "license": "MIT",
+  "keywords": ["firecrawl", "web", "scraping", "crawling", "search", "browser"],
+  "logo": "assets/logo.svg"
+}
