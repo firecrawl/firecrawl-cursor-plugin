@@ -1,17 +1,12 @@
 {
   "name": "firecrawl",
   "owner": {
-    "name": "Firecrawl",
-    "email": "hello@firecrawl.dev"
-  },
-  "metadata": {
-    "description": "Firecrawl plugin for Cursor",
-    "version": "0.1.0"
+    "name": "Firecrawl"
   },
   "plugins": [
     {
       "name": "firecrawl",
-      "source": ".",
+      "source": "./",
       "description": "Web scraping, crawling, and search for AI agents via the Firecrawl CLI"
     }
   ]
