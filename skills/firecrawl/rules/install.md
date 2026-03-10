@@ -12,10 +12,18 @@ description: |
 ## Quick Setup (Recommended)
 
 ```bash
-npx -y firecrawl-cli@1.8.0 init --all --browser
+npx -y firecrawl-cli -y
 ```
 
-This installs `firecrawl-cli` globally and authenticates.
+This installs `firecrawl-cli` globally, authenticates via browser, and installs all skills.
+
+Skills are installed globally across all detected coding editors by default.
+
+To install skills manually:
+
+```bash
+firecrawl setup skills
+```
 
 ## Manual Install
 
