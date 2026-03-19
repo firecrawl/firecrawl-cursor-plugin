@@ -28,7 +28,7 @@ Must be installed and authenticated. Check with `firecrawl --status`.
 - **Concurrency**: Max parallel jobs. Run parallel operations up to this limit.
 - **Credits**: Remaining API credits. Each scrape/crawl consumes credits.
 
-If not ready, see [rules/install.md](rules/install.md). For output handling guidelines, see [rules/security.md](rules/security.md). If the user has no account, use `firecrawl signup --email <email> --accept-terms` to create one with 50 free credits.
+If not ready, see [rules/install.md](rules/install.md). For output handling guidelines, see [rules/security.md](rules/security.md).
 
 ```bash
 firecrawl search "query" --scrape --limit 3
