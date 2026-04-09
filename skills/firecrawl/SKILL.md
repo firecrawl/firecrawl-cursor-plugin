@@ -1,7 +1,7 @@
 ---
 name: firecrawl
 description: |
-  Web scraping, search, crawling, and browser automation via the Firecrawl CLI. Use this skill whenever the user wants to search the web, find articles, research a topic, look something up online, scrape a webpage, grab content from a URL, extract data from a website, crawl documentation, download a site, or interact with pages that need clicks or logins. Also use when they say "fetch this page", "pull the content from", "get the page at https://", or reference scraping external websites. This provides real-time web search with full page content extraction and cloud browser automation — capabilities beyond what Claude can do natively with built-in tools. Do NOT trigger for local file operations, git commands, deployments, or code editing tasks.
+  Web scraping, search, crawling, and page interaction via the Firecrawl CLI. Use this skill whenever the user wants to search the web, find articles, research a topic, look something up online, scrape a webpage, grab content from a URL, extract data from a website, crawl documentation, download a site, or interact with pages that need clicks or logins. Also use when they say "fetch this page", "pull the content from", "get the page at https://", or reference scraping external websites. This provides real-time web search with full page content extraction and interact capabilities — beyond what Claude can do natively with built-in tools. Do NOT trigger for local file operations, git commands, deployments, or code editing tasks.
 allowed-tools:
   - Bash(firecrawl *)
   - Bash(npx firecrawl *)
@@ -9,9 +9,11 @@ allowed-tools:
 
 # Firecrawl CLI
 
-Web scraping, search, and browser automation CLI. Returns clean markdown optimized for LLM context windows.
+Web scraping, search, and page interaction CLI. Returns clean markdown optimized for LLM context windows.
 
 Run `firecrawl --help` or `firecrawl <command> --help` for full option details.
+
+If the task is to integrate Firecrawl into an application, add `FIRECRAWL_API_KEY` to a project, or choose endpoint usage in product code, use the Firecrawl skills repo instead of relying on this CLI skill alone: `npx skills add firecrawl/skills`.
 
 ## Prerequisites
 
@@ -30,6 +32,13 @@ Must be installed and authenticated. Check with `firecrawl --status`.
 
 If not ready, see [rules/install.md](rules/install.md). For output handling guidelines, see [rules/security.md](rules/security.md).
 
+Before doing real work, verify the setup with one small request:
+
+```bash
+mkdir -p .firecrawl
+firecrawl scrape "https://firecrawl.dev" -o .firecrawl/install-check.md
+```
+
 ```bash
 firecrawl search "query" --scrape --limit 3
 ```
@@ -42,30 +51,43 @@ Follow this escalation pattern:
 2. **Scrape** - Have a URL. Extract its content directly.
 3. **Map + Scrape** - Large site or need a specific subpage. Use `map --search` to find the right URL, then scrape it.
 4. **Crawl** - Need bulk content from an entire site section (e.g., all /docs/).
-5. **Browser** - Scrape failed because content is behind interaction (pagination, modals, form submissions, multi-step navigation).
+5. **Interact** - Scrape first, then interact with the page (pagination, modals, form submissions, multi-step navigation).
 
-| Need                        | Command    | When                                                      |
-| --------------------------- | ---------- | --------------------------------------------------------- |
-| Find pages on a topic       | `search`   | No specific URL yet                                       |
-| Get a page's content        | `scrape`   | Have a URL, page is static or JS-rendered                 |
-| Find URLs within a site     | `map`      | Need to locate a specific subpage                         |
-| Bulk extract a site section | `crawl`    | Need many pages (e.g., all /docs/)                        |
-| AI-powered data extraction  | `agent`    | Need structured data from complex sites                   |
-| Interact with a page        | `browser`  | Content requires clicks, form fills, pagination, or login |
-| Download a site to files    | `download` | Save an entire site as local files                        |
+| Need                        | Command               | When                                                      |
+| --------------------------- | --------------------- | --------------------------------------------------------- |
+| Find pages on a topic       | `search`              | No specific URL yet                                       |
+| Get a page's content        | `scrape`              | Have a URL, page is static or JS-rendered                 |
+| Find URLs within a site     | `map`                 | Need to locate a specific subpage                         |
+| Bulk extract a site section | `crawl`               | Need many pages (e.g., all /docs/)                        |
+| AI-powered data extraction  | `agent`               | Need structured data from complex sites                   |
+| Interact with a page        | `scrape` + `interact` | Content requires clicks, form fills, pagination, or login |
+| Download a site to files    | `download`            | Save an entire site as local files                        |
 
-For detailed command reference, use the individual skill for each command (e.g., `firecrawl-search`, `firecrawl-browser`) or run `firecrawl <command> --help`.
+For detailed command reference, run `firecrawl <command> --help`.
 
-**Scrape vs browser:**
+**Scrape vs interact:**
 
 - Use `scrape` first. It handles static pages and JS-rendered SPAs.
-- Use `browser` when you need to interact with a page, such as clicking buttons, filling out forms, navigating through a complex site, infinite scroll, or when scrape fails to grab all the content you need.
-- Never use browser for web searches - use `search` instead.
+- Use `scrape` + `interact` when you need to interact with a page, such as clicking buttons, filling out forms, navigating through a complex site, infinite scroll, or when scrape fails to grab all the content you need.
+- Never use interact for web searches - use `search` instead.
 
 **Avoid redundant fetches:**
 
 - `search --scrape` already fetches full page content. Don't re-scrape those URLs.
 - Check `.firecrawl/` for existing data before fetching again.
+
+## When to Load References
+
+- **Searching the web or finding sources first** -> [firecrawl-search](../firecrawl-search/SKILL.md)
+- **Scraping a known URL** -> [firecrawl-scrape](../firecrawl-scrape/SKILL.md)
+- **Finding URLs on a known site** -> [firecrawl-map](../firecrawl-map/SKILL.md)
+- **Bulk extraction from a docs section or site** -> [firecrawl-crawl](../firecrawl-crawl/SKILL.md)
+- **AI-powered structured extraction from complex sites** -> [firecrawl-agent](../firecrawl-agent/SKILL.md)
+- **Clicks, forms, login, pagination, or post-scrape browser actions** -> [firecrawl-interact](../firecrawl-interact/SKILL.md)
+- **Downloading a site to local files** -> [firecrawl-download](../firecrawl-download/SKILL.md)
+- **Install, auth, or setup problems** -> [rules/install.md](rules/install.md)
+- **Output handling and safe file-reading patterns** -> [rules/security.md](rules/security.md)
+- **Integrating Firecrawl into an app, adding `FIRECRAWL_API_KEY` to `.env`, or choosing endpoint usage in product code** -> install the Firecrawl skills repo with `npx skills add firecrawl/skills`
 
 ## Output & Organization
 
@@ -116,7 +138,7 @@ firecrawl scrape "<url-3>" -o .firecrawl/3.md &
 wait
 ```
 
-For browser, launch separate sessions for independent tasks and operate them in parallel via `--session <id>`.
+For interact, scrape multiple pages and interact with each independently using their scrape IDs.
 
 ## Credit Usage
 
