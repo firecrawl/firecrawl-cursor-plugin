@@ -2,12 +2,19 @@
   "name": "firecrawl",
   "displayName": "Firecrawl",
   "version": "0.1.0",
-  "description": "Web scraping, crawling, and search for AI agents. Gives Cursor full access to web content through the Firecrawl CLI.",
+  "description": "USER LEVEL: You fetch any page—JS-rendered or not—as clean markdown without juggling browser DevTools or curl. PROJECT LEVEL: Agents scrape live sites for up-to-date content, so generated code and docs reference what’s actually deployed. Scrape and crawl the modern web with the Firecrawl CLI—rendered pages, structured markdown, and search built for agent and RAG pipelines. BEST SUITED FOR: • Codebases that ingest or reference external web content • Docs-as-code pipelines pulling live site snapshots • Agent workflows that need structured page data as context",
   "author": {
     "name": "Firecrawl",
     "email": "hello@firecrawl.dev"
   },
   "license": "MIT",
-  "keywords": ["firecrawl", "web", "scraping", "crawling", "search", "browser"],
+  "keywords": [
+    "firecrawl",
+    "web",
+    "scraping",
+    "crawling",
+    "search",
+    "browser"
+  ],
   "logo": "assets/logo.svg"
 }
