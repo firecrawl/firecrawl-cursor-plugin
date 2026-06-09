@@ -6,33 +6,22 @@ This plugin gives Cursor's agent full web access through the [Firecrawl CLI](htt
 
 ## Install
 
-### 1. Add the plugin
+Set up the Firecrawl skills in Cursor and sign in with one command:
 
-In Cursor (2.5+), run **`/add-plugin`** and choose **firecrawl**, or browse the [Cursor Marketplace](https://cursor.com/marketplace).
+```bash
+npx -y firecrawl-cli@latest init --all --browser
+```
 
-### 2. Install the Firecrawl CLI
+This installs the Firecrawl skills into Cursor (`.cursor/skills`), adds the install rules, and opens your browser to authenticate. **Restart Cursor afterward** so it picks up the new skills.
 
-The plugin's skills call the Firecrawl CLI, so install it globally:
+Prefer to set it up manually? Install the CLI and sign in yourself:
 
 ```bash
 npm install -g firecrawl-cli
+firecrawl login --browser            # or: firecrawl login --api-key "fc-YOUR-API-KEY"
 ```
 
-### 3. Sign in
-
-```bash
-firecrawl login --browser
-```
-
-Prefer not to use the browser? Authenticate with a key instead:
-
-```bash
-firecrawl login --api-key "fc-YOUR-API-KEY"
-# or persist it as an environment variable
-export FIRECRAWL_API_KEY=fc-YOUR-API-KEY
-```
-
-Get a free API key at [firecrawl.dev/app/api-keys](https://firecrawl.dev/app/api-keys). Verify everything's ready with `firecrawl --status`.
+Get a free API key at [firecrawl.dev/app/api-keys](https://firecrawl.dev/app/api-keys). Verify with `firecrawl --status`.
 
 ## Capabilities
 
