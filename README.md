@@ -1,24 +1,85 @@
-# Firecrawl Cursor Plugin
+# Firecrawl for Cursor
 
-Cursor plugin that gives AI agents full web access through the [Firecrawl CLI](https://github.com/mendableai/firecrawl-cli): search, scrape, map, crawl, browser automation, and AI-powered extraction.
+Turn any website into clean, LLM-ready markdown or structured data — directly in Cursor.
 
-## What's included
+This plugin gives Cursor's agent full web access through the [Firecrawl CLI](https://github.com/firecrawl/cli): search, scrape, crawl, map, interact, monitor, and AI-powered extraction. Every operation includes JavaScript rendering, anti-bot handling, and proxy rotation.
 
-- **`skills/firecrawl/SKILL.md`** - Complete CLI reference covering search, scrape, map, crawl, browser, and agent commands with workflow patterns and examples
-- **`rules/install.mdc`** - Installation and authentication handling
+## Install
 
-## Setup
+Set up the Firecrawl skills in Cursor and sign in with one command:
+
+```bash
+npx -y firecrawl-cli@latest init --all --browser
+```
+
+This installs the Firecrawl skills into Cursor (`.cursor/skills`), adds the install rules, and opens your browser to authenticate. **Restart Cursor afterward** so it picks up the new skills.
+
+Prefer to set it up manually? Install the CLI and sign in yourself:
 
 ```bash
 npm install -g firecrawl-cli
-firecrawl login --browser
+firecrawl login --browser            # or: firecrawl login --api-key "fc-YOUR-API-KEY"
 ```
+
+Get a free API key at [firecrawl.dev/app/api-keys](https://firecrawl.dev/app/api-keys). Verify with `firecrawl --status`.
 
 ## Capabilities
 
-- **Search** - Web, image, and news search with optional full-page scraping of results
-- **Scrape** - Single page content extraction to clean markdown, with JS rendering support
-- **Map** - Discover all URLs on a site, with search filtering
-- **Crawl** - Bulk content extraction from entire site sections
-- **Browser** - Remote Chromium sessions for interactive pages (pagination, forms, modals)
-- **Agent** - AI-powered autonomous web research and structured data extraction
+Once installed, Cursor uses Firecrawl automatically for web tasks:
+
+- **Search** — web, news, and image search, with optional full-page scraping
+- **Scrape** — clean markdown (or structured JSON) from any page, with JS rendering
+- **Map** — discover every URL on a site
+- **Crawl** — bulk-extract whole site sections
+- **Interact** — click, fill forms, paginate, and log in on live pages
+- **Agent** — AI-powered autonomous research and structured extraction
+- **Monitor** — watch pages for meaningful changes, with webhook/email alerts
+- **Parse** — convert local files (PDF, DOCX, XLSX, …) to markdown
+- **Download** — save an entire site to local files
+
+## Usage
+
+Just ask Cursor naturally:
+
+```
+Search for "best practices for React testing" and summarize the key recommendations
+Scrape https://docs.firecrawl.dev/introduction and pull out the main concepts
+Map all the URLs under https://firecrawl.dev/blog
+Monitor https://news.ycombinator.com and alert me when an AI story hits the top 10
+```
+
+## What's included
+
+- **`skills/`** — 10 agent skills covering search, scrape, map, crawl, interact, agent, monitor, parse, download, plus a CLI workflow guide
+- **`rules/install.mdc`** — sets up the Firecrawl CLI and handles authentication automatically
+
+## Command reference
+
+The skills cover the full command set. For every command and flag, see the [Firecrawl CLI docs](https://docs.firecrawl.dev/cli).
+
+## Configuration
+
+| Variable | Description |
+|---|---|
+| `FIRECRAWL_API_KEY` | Your API key (alternative to `firecrawl login`) |
+| `FIRECRAWL_API_URL` | Custom endpoint for self-hosted instances |
+| `FIRECRAWL_NO_TELEMETRY` | Set to `1` to disable anonymous CLI telemetry |
+
+**Self-hosted:** point the CLI at your instance with `export FIRECRAWL_API_URL=https://your-instance.com` (custom URLs skip API-key auth).
+
+## Resources
+
+- [Firecrawl CLI docs](https://docs.firecrawl.dev/cli)
+- [Firecrawl CLI repository](https://github.com/firecrawl/cli)
+- [API reference](https://docs.firecrawl.dev/api-reference)
+- [Get an API key](https://firecrawl.dev/app/api-keys)
+
+## License
+
+MIT
+
+## Support
+
+- [Firecrawl Discord](https://discord.gg/gSmWdAkdwd)
+- [GitHub Issues](https://github.com/firecrawl/firecrawl-cursor-plugin/issues)
+- hello@firecrawl.dev
