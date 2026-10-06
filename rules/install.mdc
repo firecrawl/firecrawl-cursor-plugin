@@ -1,9 +1,11 @@
 ---
-description: Install the Firecrawl CLI and handle authentication errors.
+description: Install the Firecrawl CLI when the bundled MCP server is unavailable, and handle CLI authentication errors.
 alwaysApply: false
 ---
 
 # Firecrawl CLI Installation
+
+This plugin bundles the hosted Firecrawl MCP server (`firecrawl`), which signs the user in through the browser on first use. When its `firecrawl_*` tools are available, use them and skip this rule. Install the CLI only when the MCP tools are unavailable, or for local-file work such as `download` and `parse`.
 
 ## Quick Install
 

@@ -1,13 +1,18 @@
 # Firecrawl Cursor Plugin
 
-Cursor plugin that gives AI agents full web access through the [Firecrawl CLI](https://github.com/firecrawl/cli): search, scrape, map, crawl, browser interaction, AI-powered extraction, and Alexandria data providers for structured records.
+Cursor plugin that gives AI agents full web access through the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth), with the [Firecrawl CLI](https://github.com/firecrawl/cli) as a fallback: search, scrape, map, crawl, browser interaction, AI-powered extraction, and Alexandria data providers for structured records.
 
 ## What's included
 
+- **`mcp.json`** - The hosted Firecrawl MCP server at `https://mcp.firecrawl.dev/v2/mcp-oauth`. The first Firecrawl tool call opens a browser sign-in; no API key to paste.
 - **`skills/`** - 13 skills, synced automatically from [firecrawl/cli](https://github.com/firecrawl/cli): `firecrawl`, `firecrawl-agent`, `firecrawl-alexandria`, `firecrawl-crawl`, `firecrawl-developer-index`, `firecrawl-download`, `firecrawl-interact`, `firecrawl-map`, `firecrawl-monitor`, `firecrawl-parse`, `firecrawl-research-index`, `firecrawl-scrape`, `firecrawl-search`
-- **`rules/install.mdc`** - Installation and authentication handling
+- **`rules/install.mdc`** - CLI installation and authentication, for when the MCP server is unavailable
 
 ## Setup
+
+Install the plugin and approve the Firecrawl sign-in when Cursor asks (or open **Cursor Settings > MCP**). That covers every remote operation.
+
+The CLI is optional, for when the MCP server is unavailable or for local files:
 
 ```bash
 npm install -g firecrawl-cli
