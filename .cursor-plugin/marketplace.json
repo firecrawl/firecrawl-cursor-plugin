@@ -7,7 +7,7 @@
     {
       "name": "firecrawl",
       "source": "./",
-      "description": "Web scraping, crawling, and search for AI agents via the Firecrawl CLI"
+      "description": "Web search, scraping, crawling, and Alexandria data providers for AI agents via the Firecrawl CLI"
     }
   ]
 }

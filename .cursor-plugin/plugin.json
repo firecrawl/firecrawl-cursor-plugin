@@ -1,8 +1,8 @@
 {
   "name": "firecrawl",
   "displayName": "Firecrawl",
-  "version": "0.2.0",
-  "description": "Web search, scraping, crawling, and Alexandria data providers for AI agents. Gives Cursor full access to web content and structured data through the Firecrawl CLI.",
+  "version": "0.2.1",
+  "description": "Web search, scraping, crawling, and Alexandria data providers for AI agents. Gives your agent full access to web content and structured data through the Firecrawl CLI.",
   "author": {
     "name": "Firecrawl",
     "email": "hello@firecrawl.dev"
