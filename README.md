@@ -1,6 +1,6 @@
 # Firecrawl Cursor Plugin
 
-Cursor plugin that gives AI agents full web access through the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth), with the [Firecrawl CLI](https://github.com/firecrawl/cli) as a fallback: search, scrape, map, crawl, browser interaction, AI-powered extraction, and Alexandria data providers for structured records.
+Firecrawl is the context API for AI agents. This Cursor plugin lets your agent search, scrape, and interact with the web through the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth), with the [Firecrawl CLI](https://github.com/firecrawl/cli) as a fallback. It also crawls and maps sites, monitors pages for changes, and runs Alexandria data providers for structured records.
 
 ## What's included
 
