@@ -1,12 +1,14 @@
 {
   "name": "firecrawl",
   "displayName": "Firecrawl",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "The context API for AI agents. Search the live web, scrape any page into clean Markdown or structured data, and interact with dynamic pages, plus crawl, map, monitor, and Alexandria data providers. Runs on the hosted Firecrawl MCP server with browser sign-in, no API key to paste; CLI skills as a fallback.",
   "author": {
     "name": "Firecrawl",
     "email": "hello@firecrawl.dev"
   },
+  "homepage": "https://firecrawl.dev",
+  "repository": "https://github.com/firecrawl/firecrawl-cursor-plugin",
   "license": "MIT",
   "keywords": [
     "firecrawl",
