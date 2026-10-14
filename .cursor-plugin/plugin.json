@@ -1,8 +1,8 @@
 {
   "name": "firecrawl",
   "displayName": "Firecrawl",
-  "version": "0.3.2",
-  "description": "The context API for AI agents. Search the live web, scrape any page into clean Markdown or structured data, and interact with dynamic pages, plus crawl, map, monitor, and Alexandria data providers. Runs on the hosted Firecrawl MCP server with browser sign-in, no API key to paste; CLI skills as a fallback.",
+  "version": "0.4.0",
+  "description": "The context API for AI agents. Search the live web, scrape any page into clean Markdown or structured data, and interact with dynamic pages, plus crawl, map, monitor, and Alexandria data providers. Runs on the hosted Firecrawl MCP server with browser sign-in, no API key to paste.",
   "author": {
     "name": "Firecrawl",
     "email": "hello@firecrawl.dev"

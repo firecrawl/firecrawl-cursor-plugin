@@ -1,32 +1,27 @@
 # Firecrawl Cursor Plugin
 
-Firecrawl is the context API for AI agents. This Cursor plugin lets your agent search, scrape, and interact with the web through the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth), with the [Firecrawl CLI](https://github.com/firecrawl/cli) as a fallback. It also crawls and maps sites, monitors pages for changes, and runs Alexandria data providers for structured records.
+> Generated from Firecrawl's plugin source. Do not edit this repository by hand; changes made here are overwritten by the next sync.
+
+Firecrawl is the context API for AI agents. This plugin connects your agent to the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth) to search the web, read pages, collect structured data, interact with live pages, and track changes.
 
 ## What's included
 
-- **`mcp.json`** - The hosted Firecrawl MCP server at `https://mcp.firecrawl.dev/v2/mcp-oauth`. The first Firecrawl tool call opens a browser sign-in; no API key to paste.
-- **`skills/`** - 13 skills, synced automatically from [firecrawl/cli](https://github.com/firecrawl/cli): `firecrawl`, `firecrawl-agent`, `firecrawl-alexandria`, `firecrawl-crawl`, `firecrawl-developer-index`, `firecrawl-download`, `firecrawl-interact`, `firecrawl-map`, `firecrawl-monitor`, `firecrawl-parse`, `firecrawl-research-index`, `firecrawl-scrape`, `firecrawl-search`
-- **`rules/install.mdc`** - CLI installation and authentication, for when the MCP server is unavailable
+- **`mcp.json`**: the hosted Firecrawl MCP server at `https://mcp.firecrawl.dev/v2/mcp-oauth`
+- **`skills/firecrawl`**: routes each request to the right Firecrawl tool (search, scrape, Alexandria data providers, agent, map and crawl, interact, parse, monitors, developer, paper and US government search), with a reference per operation
+- **`skills/firecrawl-deep-research`**: cited, multi-source investigations, comparisons, prospect discovery and enrichment
 
 ## Setup
 
-Install the plugin and approve the Firecrawl sign-in when Cursor asks (or open **Cursor Settings > MCP**). That covers every remote operation.
-
-The CLI is optional, for when the MCP server is unavailable or for local files:
-
-```bash
-npm install -g firecrawl-cli
-firecrawl login --browser
-```
+Install the plugin, then sign in to Firecrawl when Cursor asks (or open **Customize**, find the `firecrawl` MCP server and choose **Authenticate**). There is no API key to paste and nothing to install locally.
 
 ## Capabilities
 
-- **Search** - Web, image, and news search with optional full-page scraping of results, plus matching Alexandria tools
-- **Alexandria** - Discover catalogued data providers (official APIs, licensed publishers, Firecrawl indexes), read their contracts, and execute them for structured records instead of scraping pages
-- **Scrape** - Single page content extraction to clean markdown, with JS rendering support
-- **Map** - Discover all URLs on a site, with search filtering
-- **Crawl** - Bulk content extraction from entire site sections
-- **Interact** - Remote browser sessions for interactive pages (pagination, forms, logins)
-- **Agent** - AI-powered autonomous web research and structured data extraction
-- **Developer and research indexes** - Issues, merged pull requests, READMEs, docs, and published papers
-- **Monitor, download, parse** - Watch pages for changes, save a site locally, parse local files
+- **Search**: web, news and image search with query-relevant excerpts, plus matching Alexandria data providers
+- **Scrape**: any URL to clean Markdown, JSON with a schema, a grounded answer or verbatim highlights
+- **Alexandria**: discover catalogued data providers and execute them for structured records
+- **Agent**: autonomous multi-source collection into structured data
+- **Map and crawl**: list a site's URLs or collect a bounded section
+- **Interact**: clicks, forms and navigation in a live browser session
+- **Parse**: PDFs and documents, including local files through a hosted upload
+- **Monitor**: recurring checks for page changes
+- **Developer, paper and US government search**: issues, merged pull requests, READMEs and docs; published papers; statutes, regulations and court opinions
