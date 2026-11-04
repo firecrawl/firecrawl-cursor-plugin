@@ -1,7 +1,10 @@
 {
   "mcpServers": {
     "firecrawl": {
-      "url": "https://mcp.firecrawl.dev/v2/mcp-oauth"
+      "url": "https://mcp.firecrawl.dev/v2/mcp-oauth",
+      "headers": {
+        "X-Firecrawl-Origin": "firecrawl-cursor-plugin"
+      }
     }
   }
 }

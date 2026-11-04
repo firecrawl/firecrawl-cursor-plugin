@@ -1,8 +1,24 @@
 # Collect structured data
 
-For fields from one known page, use `firecrawl_scrape` with JSON output and a
-schema. For records available through a data provider, use its published
-capability. For research spanning sources or unknown URLs, use `firecrawl_agent`.
+For fields from one known page, use `firecrawl_scrape` with the `json` format.
+For records available through a data provider, use its published capability.
+For research spanning sources or unknown URLs, use `firecrawl_agent`.
+
+## Fields from a known page
+
+Use `firecrawl_scrape` with `formats: ["json"]` and `jsonOptions`: a JSON
+Schema in `schema` naming only the requested fields, and an optional
+`prompt` describing what to extract. The values come back in `json`. Add
+`markdown` to `formats` when you need the page text to check them. A missing
+value can mean the page does not state it; say so rather than guessing.
+
+Some hosts validate arguments against the published tool schema before
+sending, and that schema does not yet list the keys `jsonOptions.schema` can hold.
+If the host refuses the call for that reason, retry with `jsonOptions.prompt`
+alone and say that the output shape was not enforced.
+
+For the same fields across several known pages, reuse the schema on each page;
+see [site collection](site-collection.md).
 
 ## Data providers
 
@@ -19,8 +35,8 @@ do not invent provider names, capability names, or required inputs.
 
 Check the capability's stated price and external effects against the user's
 request before execution. If access is unavailable or no capability fits,
-continue with suitable web sources without representing a catalogue entry as
-retrieved data.
+use `firecrawl_search` and `firecrawl_scrape` on suitable web sources without
+representing a catalogue entry as retrieved data.
 
 For Alexandria feedback, set `endpoint: alexandria`, omit `jobId`, and supply
 `requestedWebsite` (the website URL the user needed data from and the requested
