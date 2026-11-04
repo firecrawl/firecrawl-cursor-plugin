@@ -12,14 +12,40 @@ user's source, scope, and tool choices. Resolve the tool names below through
 the host's MCP connection, using its tool search for deferred tools. Report
 connection or authentication errors.
 
+## Choose the workflow
+
+Prefer a matching focused workflow over a general investigation. Reuse evidence
+already collected; choosing a workflow does not require restarting retrieval.
+
+- **Enrich supplied people or a lead CSV:** `enrich-lead`.
+- **Discover new prospects:** `find-leads`.
+- **Find published organizational contacts:** `business-contact-research`.
+- **Collect existing logos, colors and fonts for a document:** `brand-identity`.
+- **Extract a reference website's UI system:** `design`.
+- **Find and verify current job openings:** `job-postings`.
+- **Research a fantasy roster decision:** `fantasy-sports`.
+- **Audit a site's SEO metadata, content and links:** `seo-audit`.
+- **Answer from official documentation:** `read-docs` for setup, usage,
+  examples, migrations, compatibility and documented errors.
+- **Investigate implementation or bugs beyond the docs:** follow
+  [developer research](references/developer-research.md) for repository code,
+  issues and pull requests.
+- **Synthesize a broader investigation:** `firecrawl-deep-research` when a
+  focused workflow cannot complete the requested cross-source analysis.
+
+Multiple records or tool calls alone do not require deep research. For ordinary
+searches and page reads, choose the operation below directly.
+
 ## Choose the operation
 
-- **Find sources:** `firecrawl_search` returns ranked results and relevant
-  excerpts. Use `firecrawl_scrape` on a result when the answer needs more of
-  the page. If the results already answer the question, no extra fetch is needed.
+- **Find sources:** Use `firecrawl_search` to find sources and `scrapeOptions`
+  to retrieve their page content in one call.
   Results can also suggest Alexandria data-provider capabilities.
-- **Read a known URL:** `firecrawl_scrape` retrieves the page. For structured
-  fields from that page, request JSON with the schema the tool accepts.
+- **Read URLs:** Use `firecrawl_scrape` to retrieve page content directly
+  from a specific URL. For structured fields from that page, request the
+  `json` format with a schema; see [structured data](references/structured-data.md).
+- **Read many known URLs:** call `firecrawl_scrape` per URL with the same
+  options. See [site collection](references/site-collection.md).
 - **Use Alexandria providers:** for structured records, inspect a matching
   capability with `firecrawl_find_tools` when its contract is not already
   available, then execute it through `firecrawl_scrape`. See
@@ -37,15 +63,13 @@ connection or authentication errors.
   [documents](references/documents.md) before passing a local path.
 - **Track changes:** see [monitoring](references/monitoring.md) for recurring
   checks, existing monitors, and check results.
-- **Research code or APIs:** `firecrawl_developer_search` searches indexed
+- **Retrieve developer evidence:** `firecrawl_developer_search` searches indexed
   repositories and documentation. See
   [developer research](references/developer-research.md) for source selection.
 - **Research US law and regulation:** `firecrawl_gov_search` searches statutes,
   regulations, codes, court opinions, and other US government publications.
 - **Research papers:** see [paper research](references/paper-research.md) for
   paper search, metadata, citation relationships, and full-text passages.
-- **Deep research:** use the `firecrawl-deep-research` skill for cited,
-  multi-source investigations, comparisons, prospect discovery and research enrichment, not quick lookups.
 
 Read only the reference relevant to the operation. The live tool schema is
 the authority for accepted parameters and limits.
@@ -55,6 +79,10 @@ usage. Web, developer, and paper searches are billed per
 request. Government search is free. Provider-only
 discovery is free. Page retrieval is billed per URL; provider execution uses
 the capability's listed price.
+
+If the user wants to browse providers or view account usage, use free
+`firecrawl_find_tools` discovery in chat for providers or report
+`firecrawl_credit_usage` data for usage.
 
 ## Feedback
 

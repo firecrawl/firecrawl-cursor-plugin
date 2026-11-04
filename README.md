@@ -8,7 +8,9 @@ Firecrawl is the context API for AI agents. This plugin connects your agent to t
 
 - **`mcp.json`**: the hosted Firecrawl MCP server at `https://mcp.firecrawl.dev/v2/mcp-oauth`
 - **`skills/firecrawl`**: routes each request to the right Firecrawl tool (search, scrape, Alexandria data providers, agent, map and crawl, interact, parse, monitors, developer, paper and US government search), with a reference per operation
-- **`skills/firecrawl-deep-research`**: cited, multi-source investigations, comparisons, prospect discovery and enrichment
+- **`skills/firecrawl-deep-research`**: cited, multi-source investigations and comparisons
+- **`skills/get-started`**: checks the connection, finds a first goal and delivers a first result
+- **Workflow skills**: `brand-identity` (logo, colors and fonts for a document), `business-contact-research` (published business contacts), `design` (a site's design system as `DESIGN.md`), `enrich-lead` (enrich supplied people or a lead CSV), `fantasy-sports` (start/sit, waiver and trade research), `find-leads` (ranked prospect lists), `job-postings` (current, verified openings), `read-docs` (answers from official documentation) and `seo-audit` (evidence-backed on-page SEO audit)
 
 ## Setup
 

@@ -1,5 +1,11 @@
 # Research code and APIs
 
+Use this route when the question requires repository code, issue discussions
+or pull requests, rather than an answer from official documentation alone. Use
+`read-docs` for documented setup, usage, migrations and compatibility. A supplied
+issue or repository can be investigated directly; a documentation search is not
+a prerequisite.
+
 Use `firecrawl_developer_search` for library behavior, API contracts, error
 messages, known bugs, and implementation examples in indexed public repositories
 and documentation. Include the library, version, and exact error or symbol when
