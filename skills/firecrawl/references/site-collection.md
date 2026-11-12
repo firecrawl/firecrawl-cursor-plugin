@@ -17,8 +17,8 @@ Do not restart an existing job merely to check progress.
 
 There is no separate batch tool. For a list of known URLs, call
 `firecrawl_scrape` once per URL with the same formats and options, in parallel
-when the host allows it. Reuse one JSON schema when the same fields are needed
-from every page. When the URLs share a site section, one `firecrawl_crawl` with
+when the host allows it. Extract the same fields from every page.
+When the URLs share a site section, one `firecrawl_crawl` with
 `includePaths` and a `limit` can collect them as a single job instead. Report
 the URLs that failed rather than dropping them from the result.
 

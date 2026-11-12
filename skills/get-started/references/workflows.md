@@ -16,7 +16,7 @@ Users can combine paths. Preserve their chosen scope. A quick product recommenda
 
 The public onboarding skill covers several Firecrawl clients. Check the live tool list before promising a feature; deployments and account access differ.
 
-- **Discovery:** Search when URLs are unknown. Use free Alexandria-only discovery or `firecrawl_find_tools` to choose appropriate providers yourself. Ordinary web search and data execution are billed and can be part of a concrete first task.
+- **Discovery:** Search when URLs are unknown. Use free Alexandria-only discovery or `alexandria_library_search` to choose appropriate providers yourself. Ordinary web search and data execution are billed and can be part of a concrete first task.
 - **Known page:** Scrape the supplied URL. Public document URLs belong here too.
 - **Same fields across entities:** Prefer an Alexandria provider when its contract covers the target records, required fields, provenance, and scale. If web results already answer the question, use them.
 - **Complex multi-source extraction:** Use agent research when the exposed tool supports it and the answer spans sites or needs structured output. Read results through its status tool.
@@ -58,10 +58,10 @@ For a formal deep-research report, infer or ask for the intended depth/runtime b
 - **Company discovery → YC companies:** Discover the directory's live company-search contract, then retrieve up to five companies if a result limit exists, or one page otherwise. Show supported fields and source links. Explain the value of structured records, then offer supported refinements. Do not impose an active-company, geography, or batch filter the user did not request.
 - **Compare two named products:** Discover relevant product contracts and retrieve the specified products if their required identities are known. Ask for a product URL or region only if needed to identify the product or make prices comparable. Show a sourced comparison rather than provider-picking instructions.
 - **Generic company discovery:** Ask which kinds of companies if context does not establish a target. Do not execute an invented search while waiting.
-- **Not sure what to use Firecrawl for:** Use free `firecrawl_find_tools` discovery to show a small available provider set in chat, with concrete examples for developer search, scraping, Alexandria records, and web search. Use free discovery to ground provider suggestions; do not require selection or execute a paid sample until a target is clear.
+- **Not sure what to use Firecrawl for:** Use free `alexandria_library_search` discovery to show a small available provider set in chat, with concrete examples for developer search, scraping, Alexandria records, and web search. Use free discovery to ground provider suggestions; do not require selection or execute a paid sample until a target is clear.
 - **Learn what Firecrawl can do / don't spend credits:** Explain relevant capabilities and use free discovery if it helps. Do not run paid samples.
 - **Provider access blocked:** Follow the returned access action. Do not fabricate a result, accept terms automatically, or make the user browse the catalogue to solve an access gate.
-- **User wants to browse:** Show relevant categories or a compact provider list from free `firecrawl_find_tools` discovery in chat. Do not make browsing a prerequisite for direct tool execution.
+- **User wants to browse:** Show relevant categories or a compact provider list from free `alexandria_library_search` discovery in chat. Do not make browsing a prerequisite for direct tool execution.
 
 Collect source evidence, distinguish provider data from inferences, and state material gaps. Never claim current prices or facts based only on a catalogue description. Cart actions, outreach, and other external mutations require the user's instruction for those actions.
 

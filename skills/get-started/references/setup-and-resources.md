@@ -32,7 +32,7 @@ Some Firecrawl surfaces work without a key, but this plugin still requires a con
 
 Alexandria needs a key on a team with access. Read the actual provider contract and returned access status. A successful usage check is not a provider access grant.
 
-For `THIRD_PARTY_DATA_TERMS_REQUIRED`, read and present the exact terms using `terms/show` through `firecrawl_scrape`, separately from provider execution. The MCP rejects terms acceptance, including any `terms/accept` capability returned in an API payload. Direct an organization admin to accept the terms in the dashboard using the returned action URL, or [Data-source settings](https://www.firecrawl.dev/app/settings?tab=data-sources) if that page is unavailable. Retry the original request with the identical payload only after the admin confirms acceptance and access. If the same gate remains, stop and ask an organization admin to review access rather than looping.
+For `THIRD_PARTY_DATA_TERMS_REQUIRED`, read and present the exact terms using `terms/show` through `alexandria_library_read`, separately from provider execution. The MCP rejects terms acceptance, including any `terms/accept` capability returned in an API payload. Direct an organization admin to accept the terms in the dashboard using the returned action URL, or [Data-source settings](https://www.firecrawl.dev/app/settings?tab=data-sources) if that page is unavailable. Retry the original request with the identical payload only after the admin confirms acceptance and access. If the same gate remains, stop and ask an organization admin to review access rather than looping.
 
 Setup, provider selection, and an ordinary data request do not authorize terms acceptance. Do not write directly to provider-access storage or offer to bypass a gate.
 
