@@ -23,6 +23,13 @@ already collected; choosing a workflow does not require restarting retrieval.
 - **Collect existing logos, colors and fonts for a document:** `brand-identity`.
 - **Extract a reference website's UI system:** `design`.
 - **Find and verify current job openings:** `job-postings`.
+- **Check or compare prices, plans, fees or deals, stock or reviews:** `prices-and-plans`.
+- **Find local businesses, their hours, reviews or directions:** `local-businesses`.
+- **Read or summarize a video or podcast transcript:** `video-transcripts`.
+- **Gather dated news coverage:** `news-coverage`.
+- **Look up stock quotes, earnings or SEC filings:** `markets-and-filings`.
+- **Find rentals or homes for sale:** `property-listings`.
+- **Price flights or hotels for given dates:** `flights-and-hotels`.
 - **Research a fantasy roster decision:** `fantasy-sports`.
 - **Audit a site's SEO metadata, content and links:** `seo-audit`.
 - **Answer from official documentation:** `read-docs` for setup, usage,
@@ -42,14 +49,20 @@ searches and page reads, choose the operation below directly.
   to retrieve their page content in one call.
   Results can also suggest Alexandria data-provider capabilities.
 - **Read URLs:** Use `firecrawl_scrape` to retrieve page content directly
-  from a specific URL. For structured fields from that page, request the
-  `json` format with a schema; see [structured data](references/structured-data.md).
+  from a specific URL. For structured fields from that page, read the page and
+  extract the fields yourself; see [structured data](references/structured-data.md).
 - **Read many known URLs:** call `firecrawl_scrape` per URL with the same
   options. See [site collection](references/site-collection.md).
 - **Use Alexandria providers:** for structured records, inspect a matching
-  capability with `firecrawl_find_tools` when its contract is not already
-  available, then execute it through `firecrawl_scrape`. See
+  capability with `alexandria_library_search` when its contract is not already
+  available, then execute it through `alexandria_library_read`. See
   [structured data](references/structured-data.md) for discovery and execution.
+- **Find or enrich people and companies:** `people_company_search` finds
+  people or companies by filters such as title, employer, location, industry
+  or headcount; `people_company_enrich` looks up known people or companies,
+  with work email on request. Use them before Alexandria people and company
+  providers when the connection exposes them; `find-leads` and `enrich-lead`
+  cover lead lists.
 - **Research across sources:** `firecrawl_agent` gathers structured data when
   the task spans sources or unknown URLs. See
   [structured data](references/structured-data.md) for job results and continuation.
@@ -78,10 +91,12 @@ For account questions, `firecrawl_credit_usage` reports current or historical
 usage. Web, developer, and paper searches are billed per
 request. Government search is free. Provider-only
 discovery is free. Page retrieval is billed per URL; provider execution uses
-the capability's listed price.
+the capability's listed price. People and company search and enrichment charge
+the per-provider prices in their tool descriptions, capped by `max_credits`;
+enrichment misses are free.
 
 If the user wants to browse providers or view account usage, use free
-`firecrawl_find_tools` discovery in chat for providers or report
+`alexandria_library_search` discovery in chat for providers or report
 `firecrawl_credit_usage` data for usage.
 
 ## Feedback
