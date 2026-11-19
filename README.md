@@ -2,7 +2,7 @@
 
 > Generated from Firecrawl's plugin source. Do not edit this repository by hand; changes made here are overwritten by the next sync.
 
-Firecrawl is the context API for AI agents. This plugin connects your agent to the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth) to search the web, read pages, collect structured data, interact with live pages, and track changes.
+Firecrawl is knowledge infrastructure to make your agents smarter. This plugin connects your agent to the hosted [Firecrawl MCP server](https://docs.firecrawl.dev/mcp-server/oauth) to search the web, read pages, collect structured data, interact with live pages, and track changes.
 
 ## What's included
 

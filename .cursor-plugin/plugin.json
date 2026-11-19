@@ -1,8 +1,8 @@
 {
   "name": "firecrawl",
   "displayName": "Firecrawl",
-  "version": "0.12.0",
-  "description": "The context API for AI agents. Search the live web, scrape any page into clean Markdown or structured data, and interact with dynamic pages, plus crawl, map, monitor, and Alexandria data providers. Runs on the hosted Firecrawl MCP server with browser sign-in, no API key to paste.",
+  "version": "0.13.0",
+  "description": "Search the web and get answers from the source. Ask about a company, a person, a law, an election, a research paper or a stock, and Firecrawl finds the provider that has it in Alexandria, its library of data sources, and shows where the answer came from. For everything else, it searches and reads the live web. Runs on the hosted Firecrawl MCP server with browser sign-in, no API key to paste.",
   "author": {
     "name": "Firecrawl",
     "email": "hello@firecrawl.dev"
@@ -18,7 +18,9 @@
     "search",
     "browser",
     "alexandria",
-    "mcp"
+    "mcp",
+    "web-search",
+    "web-scraping"
   ],
   "logo": "assets/logo.svg"
 }
