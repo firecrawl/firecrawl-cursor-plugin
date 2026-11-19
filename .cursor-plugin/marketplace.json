@@ -7,7 +7,7 @@
     {
       "name": "firecrawl",
       "source": "./",
-      "description": "The context API for AI agents: search, scrape, and interact with the web through the hosted Firecrawl MCP server",
+      "description": "Search and access more data: search, scrape, and interact with the web through the hosted Firecrawl MCP server",
       "category": "productivity"
     }
   ]
